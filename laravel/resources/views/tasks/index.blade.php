@@ -48,8 +48,8 @@
                     <div class="alert alert-danger">
                         <strong>Error:</strong>
                         <ul>
-                            @foreach ($errors -> all() as $error)
-                                <li> {{$error }}</li>
+                            @foreach ( $errors -> all() as $error)
+                                <li> {{ $error }}</li>
                             @endforeach
                         </ul>
                     </div>
@@ -108,7 +108,7 @@
                                     <td>{{$data ->name}}</td>
                                 <!--task creation date -->
                                     <td>{{ date('j M Y ', strtotime( $data ->created_at ) ) }}</td>
-                                <!--task due date if due date is surpassed due date = color red -->
+                                <!--task due date if current date has surpassed  due date = color red -->
                                     @if($data->dueDate >  date('Y-m-d H:i:s'))
                                         <td >{{ date('j M Y ', strtotime( $data ->dueDate ) ) }}</td>
                                     @else  <td style="color:red;">{{ date('j M Y ', strtotime( $data ->dueDate ) ) }}</td>
@@ -166,7 +166,7 @@
                                 <td>{{$data ->name}}</td>
                             <!-- completed task description -->
                                 <td>{{$data->description}} </td>
-                            <!-- completed task creayion date -->
+                            <!-- completed task creation date -->
                                 <td>{{ date('j M Y ', strtotime( $data ->created_at ) ) }}</td>
                             <!-- completed task delete button -->
                                 <td>
