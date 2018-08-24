@@ -93,7 +93,7 @@ class TaskController extends Controller
             $this->validate($request, [
             'updateName' => 'required|min:5|max:255|' ,
             'updateTaskDescription' => 'required|min:5|max:300',
-            'updateDueDate'=> 'required|min:8',
+            'updateDueDate'=> 'required',
             ]);
 
             $task = Task::find($id);
